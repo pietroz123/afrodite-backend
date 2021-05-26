@@ -29,7 +29,6 @@ app.use(
 app.use(bodyParser.json());
 
 // Routes
-app.use('/api/users', require('./routes/api/users'));
 app.use('/api/servicos', require('./routes/api/servicos'));
 
 // Start the server
