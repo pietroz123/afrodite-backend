@@ -17,6 +17,7 @@ O backend da aplicação está localizado na pasta root da aplicação, nas segu
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
-| GET | /api/servicos | Retorna todos os serviços disponíveis no Salesforce |
-| GET | /api/profissionais | Retorna todos os profissionais disponíveis no Salesforce |
+| GET | /api/servicos | Retorna todos os serviços disponíveis |
+| GET | /api/servicos/:idServico | Retorna um serviço pelo seu Id |
+| GET | /api/profissionais | Retorna todos os profissionais disponíveis |
 | GET | /api/profissionais/:idProfissional/servicos | Retorna todos os serviços prestados por um profissional |

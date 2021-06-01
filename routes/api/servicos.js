@@ -10,4 +10,12 @@ const ServicoController = require('../../controllers/servicos');
 router.route('/')
     .get(ServicoController.findAll);
 
+/**
+ * @route   GET /api/servicos/{id}
+ * @desc    Recupera um serviço pelo seu id
+ * @access  PUBLIC
+ */
+router.route('/:idServico')
+    .get(ServicoController.findById);
+
 module.exports = router;
