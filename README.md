@@ -20,4 +20,5 @@ O backend da aplicação está localizado na pasta root da aplicação, nas segu
 | GET | /api/servicos | Retorna todos os serviços disponíveis |
 | GET | /api/servicos/:idServico | Retorna um serviço pelo seu Id |
 | GET | /api/profissionais | Retorna todos os profissionais disponíveis |
+| GET | /api/profissionais/:idProfissional | Retorna um profissional pelo seu Id |
 | GET | /api/profissionais/:idProfissional/servicos | Retorna todos os serviços prestados por um profissional |

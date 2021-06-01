@@ -18,6 +18,31 @@ module.exports = {
     },
 
     /**
+     * Recupera um profissional pelo seu ID
+     */
+     findById: async (req, res, next) => {
+        let { idProfissional } = req.params;
+
+        let query = {
+            name: 'profissional',
+            text: `
+                SELECT *
+                FROM salesforce.AF_Profissional__c
+                WHERE sfid = $1
+            `.trim(),
+            values: [idProfissional]
+        }
+
+        try {
+            const results = await db.query(query);
+            res.send(results);
+        }
+        catch (error) {
+            res.status(400).json(error);
+        }
+    },
+
+    /**
      * Recupera todos os serviços do profissional
      */
     getServices: async (req, res, next) => {
