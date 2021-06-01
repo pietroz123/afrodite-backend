@@ -10,4 +10,12 @@ const ProfissionalController = require('../../controllers/profissionais');
 router.route('/')
     .get(ProfissionalController.findAll);
 
+/**
+ * @route   GET /api/profissionais/{id}/servicos
+ * @desc    Recupera todos os serviços prestados por um profissional
+ * @access  PUBLIC
+ */
+router.route('/:idProfissional/servicos')
+    .get(ProfissionalController.getServices);
+
 module.exports = router;
