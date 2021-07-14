@@ -18,4 +18,12 @@ router.route('/')
 router.route('/:idServico')
     .get(ServicoController.findById);
 
+/**
+ * @route   GET /api/servicos/{id}/profissionais
+ * @desc    Recupera todos os profissionais que prestam determinado serviço
+ * @access  PUBLIC
+ */
+router.route('/:idServico/profissionais')
+    .get(ServicoController.getProfessionals);
+
 module.exports = router;
