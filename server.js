@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 app.use('/api/servicos', require('./routes/api/servicos'));
 app.use('/api/profissionais', require('./routes/api/profissionais'));
 app.use('/api/agendamentos', require('./routes/api/agendamentos'));
+app.use('/api/clientes', require('./routes/api/clientes'));
 
 // Start the server
 const port = process.env.PORT || 5000;
