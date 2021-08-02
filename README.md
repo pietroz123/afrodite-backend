@@ -23,6 +23,7 @@ O backend da aplicação está localizado na pasta root da aplicação, nas segu
 | GET | /api/profissionais | Retorna todos os profissionais disponíveis |
 | GET | /api/profissionais/:idProfissional | Retorna um profissional pelo seu Id |
 | GET | /api/profissionais/:idProfissional/servicos | Retorna todos os serviços prestados por um profissional |
+| POST | /api/agendamentos | Criação de um agendamento passando horário, cliente, serviço e profissional. Ex: `{ "horario": "2021-08-03T14:30:00.000Z", "idCliente": "a015e000008zEKEAA2", "idServico": "a0C5e000000hUO5EAM", "idProfissional": "a0A5e00000574jBEAQ" }` |
 
 ## Rodar a API
 
