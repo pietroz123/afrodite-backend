@@ -12,7 +12,9 @@ module.exports = {
             name: 'find-appointments-by-mobile-phone',
             text: `
                 SELECT
-                    ag.af_horario__c ag_horario, pf.name pf_name, sv.name sv_name
+                    ag.af_horario__c ag_horario, ag.sfid ag_sfid,
+                    pf.name pf_name,
+                    sv.name sv_name
                 FROM
                     salesforce.af_agendamento__c ag
                 JOIN
