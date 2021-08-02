@@ -3,18 +3,31 @@ const db = require('../db');
 module.exports = {
 
     /**
-     * Recupera um serviço pelo seu ID
+     * Recupera os agendamentos de um cliente pelo telefone celular do cliente
      */
     findByMobilePhone: async (req, res, next) => {
-        let { idServico } = req.params;
+        let { mobilePhone } = req.params;
 
         let query = {
             name: 'find-appointments-by-mobile-phone',
             text: `
-                SELECT *
-                FROM salesforce.AF_Agendamento__c
+                SELECT
+                    ag.af_horario__c ag_horario, pf.name pf_name, sv.name sv_name
+                FROM
+                    salesforce.af_agendamento__c ag
+                JOIN
+                    salesforce.af_cliente__c cl
+                    ON ag.af_cliente__c = cl.sfid
+                JOIN
+                    salesforce.af_profissional__c pf
+                    ON ag.af_profissional__c = pf.sfid
+                JOIN
+                    salesforce.af_servico__c sv
+                    ON ag.af_servico__c = sv.sfid
+                WHERE
+                    cl.af_telefone_celular__c = $1
             `.trim(),
-            values: []
+            values: [mobilePhone]
         }
 
         try {
